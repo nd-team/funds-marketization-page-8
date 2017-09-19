@@ -5,7 +5,7 @@ html, body, div, span, nav, header, iframe,h1, h2, h3, h4, h5, h6, p, section, f
   padding:0;
   text-decoration:none;
   list-style:none;
-  font-family: ﻿MicrosoftYaHei;
+  font-family: "﻿MicrosoftYaHei";
   font-size:14px;
   color:#333;
   outline: none;
@@ -15,6 +15,8 @@ html, body, div, span, nav, header, iframe,h1, h2, h3, h4, h5, h6, p, section, f
 header{
   background:#333;
   height:60px;
+  box-shadow: 0px 1px 1px #333;
+  margin-bottom:1px;
   .header{
     width:1200px;
     height:100%;
@@ -24,7 +26,6 @@ header{
     img{
       width:100px;
       height:60px;
-      background:red;
     }
     ul{
       display:flex;
@@ -37,7 +38,7 @@ header{
         }
         .header-act{
           color:#fbc100;
-          padding-bottom:18px;
+          padding-bottom:20px;
           border-bottom:2px solid #fbc100;
         }
       }
@@ -73,12 +74,12 @@ header{
       img{
         width:35px;
         height:35px;
-        background:yellow;
       }
-      div{
+      .header-set{
         position: absolute;
         top:60px;
         right:-95px;
+        z-index:10;
         width:130px;
         height:182px;
         background:#333;
@@ -91,18 +92,25 @@ header{
           line-height:43px;
           text-align:center;
           position: relative;
-          z-index:3;
+          z-index:10;
+          border-bottom:1px solid #464440;
+          &:nth-child(4){
+            border-bottom:0px solid #464440;
+          }
           i{
             svg{
               width:20px;
               height:20px;
               margin-bottom:-6px; 
             }
-            .rzjh{
+            .tc{
               margin-left:-26px;
+              width:22px;
+              height:22px;
             }
           }
           &:hover{
+            background:#222;
             color:#fbc100;
             i{
               svg{
@@ -112,6 +120,16 @@ header{
           }
         }
       }
+      @media screen and (max-width: 1410px){
+        .header-set{
+          left:75px;
+        }
+      } 
+    }
+  }
+  @media screen and (max-width: 1250px){
+    .header{
+      width:950px;
     }
   }
 }
@@ -119,12 +137,11 @@ nav{
   overflow:hidden;
   width:100%;
   position: relative;
+  z-index:6;
   img{
     position: absolute;
     top:-6px;
     left:50%;
-    // width:100%;
-    // height:174px;
     margin-left:-960px;
     z-index:-1;
   }
@@ -141,19 +158,20 @@ nav{
       position: absolute;
       z-index:3;
       top:107px;
-      left:252px;
-      width:573px;
-      // height:100px;
+      left:253px;
+      overflow-y:auto;
+      width:571px;
+      height:105px;
       background:#fff;
       border:1px solid #ebebeb;
-      // display:flex;
-      // flex-direction:column;
-      // align-items:center;
       a{
         display:block;
-        width:100%;
-        height:37px;
+        padding-left:36px;
+        height:35px;
         line-height:37px;
+        &:hover{
+          background:#efefef;
+        }
       }
     }
     div{
@@ -169,16 +187,23 @@ nav{
           width: 100px;
           height: 40px;
           margin-right: 1px;
-          .item2{
-            background: #fff;
-            width: 99px;
-            height: 40px;
-            // border: 1px solid rgba(0,0,0,0.001);
-            border: 1px solid #fff;
-            margin-left: -1px;
-            display: none;
-            &:hover{
-              background:red;
+          ul{
+            margin-top:-1px;
+            margin-left:-1px;
+            overflow-y:auto;
+            width:100%;
+            height:80px;
+            .item2{
+              background: #fff;
+              width: 99px;
+              height: 40px;
+              // border: 1px solid rgba(0,0,0,0.001);
+              border: 1px solid #fff;
+              margin-left: -1px;
+              display: none;
+              &:hover{
+                background:red;
+              }
             }
           }
           &:hover .item2{
@@ -218,9 +243,19 @@ nav{
       font-size:16px;
       background:#fcc000;
       border:0 solid red;
+      box-shadow: 3px 3px 10px #fcc000;
+      border-top-right-radius:2px;
+      border-bottom-right-radius:2px;
     }
   }
-  
+  @media screen and (max-width: 1250px){
+    .nav{
+      width:950px;
+      .nav-add{
+        left:128px;
+      }
+    }
+  }
 }
 section{
   margin:0 auto;
@@ -247,21 +282,27 @@ section{
           margin:0;
           display: flex;
           justify-content: flex-start;
-          align-items: center;   
+          align-items: center;
+          &:nth-child(8){
+            h2{
+              border-bottom:0px solid red;
+            }
+            
+          }
           h2{
             width:250px;
             height:40px;
             position: relative;
             display:flex;
-            // justify-content:center;
             align-items:center;
+            line-height:40px;
             border-bottom:1px solid #666;
             i{
               margin-left:16px;
               margin-right:18px;
-              margin-bottom:-12px;
+              margin-bottom:-14px;
               svg{
-                fill:#fff;
+                fill:#9f9f9f;
                 width:26px;
                 height:26px;
               }
@@ -269,7 +310,7 @@ section{
             }
             .se-v{
               position: absolute;
-              top:12px;
+              top:3px;
               right:0px;
               svg{
                 transform: rotate(-90deg);
@@ -279,9 +320,10 @@ section{
               }
             }
             span{
+              padding-bottom:10px;
               margin-bottom:-8px;
               font-size:16px;
-              color:#fff;
+              color:#9f9f9f;
             }
           }
           ul{
@@ -289,25 +331,63 @@ section{
           }
         }
         .se-nav-active{
-          height:200px;
+          height:160px;
           display:flex;
           align-items:center;
           flex-direction:column;
+          border-bottom:1px solid #666;
           h2{
+            i{
+              svg{
+                fill:#fff;
+              }
+            }
+            
+            border-bottom:0px solid red;
+            // padding-bottom:5px;
             .se-v{
               svg{
                 transform: rotate(0deg);
+                fill:#fff;
               }
+            }
+            span{
+              color:#fff;
             }
           }
           ul{
             display:block;
+            overflow-y:scroll;
+            // &::
+            &::-webkit-scrollbar {
+            width:10px;
+            // height:12px;
+            }
+            &::-webkit-scrollbar-button    {
+            // background-color:#666;
+            }
+            &::-webkit-scrollbar-track     {
+            background:#1f1e19;
+            }
+            &::-webkit-scrollbar-track-piece {
+            background:#1f1e19;
+            }
+            &::-webkit-scrollbar-thumb{
+            background:#4a4846;
+            border-radius:4px;
+            }
+            // &::-webkit-scrollbar-corner {
+            // background:#82AFFF;
+            // }
+            // &::-webkit-scrollbar-resizer  {
+            // background:#FF0BEE;
+            // }
             li{
               display:flex;
               align-items:center;
-              width:220px;
+              width:160px;
               height:40px;
-              margin-left:120px;
+              margin-left:80px;
               a{
                 color:#9f9f9f;
               }
@@ -510,6 +590,28 @@ section{
     }
   }
 }
+@media screen and (max-width: 1250px){
+  section{
+    transform:scale(0.8);
+    margin-left:-0px;
+    margin-top:-116px;
+  }
+}
+@media screen and (max-width: 1140px){
+  section{
+    margin-left:-66px;
+  }
+}
+@media screen and (max-width: 1024px){
+  section{
+    margin-left:-96px;
+  }
+}
+@media screen and (max-width: 1010px){
+  section{
+    margin-left:-106px;
+  }
+}
 footer{
   height:278px;
   width:100%;
@@ -530,13 +632,11 @@ footer{
       align-items:center;
       flex-direction:column;
       i{
+        display:block;
         margin-top:54px;
         margin-bottom:20px;
-        svg{
-          width:42px;
-          height:35px;
-          fill:#fff;
-        }
+        width:42px;
+        height:35px;
       }
       ul{
         li{
@@ -557,6 +657,14 @@ footer{
         color:#fff;
         margin-left:20px;
       }
+    }
+  }
+}
+@media screen and (max-width: 1250px){
+  footer{
+    margin-top:-116px;
+    .foot{
+      width:950px;
     }
   }
 }

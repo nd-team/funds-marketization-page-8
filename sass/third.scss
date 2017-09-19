@@ -5,7 +5,7 @@ html, body, div, span, nav, header, iframe,h1, h2, h3, h4, h5, h6, p, section, f
   padding:0;
   text-decoration:none;
   list-style:none;
-  font-family: ﻿MicrosoftYaHei;
+  font-family: "﻿MicrosoftYaHei";
   font-size:14px;
   color:#333;
   outline: none;
@@ -14,6 +14,8 @@ html, body, div, span, nav, header, iframe,h1, h2, h3, h4, h5, h6, p, section, f
 header{
   background:#333;
   height:60px;
+  box-shadow: 0px 2px 10px #000;
+  margin-bottom:3px;
   .header{
     width:1200px;
     height:100%;
@@ -36,7 +38,7 @@ header{
         }
         .header-act{
           color:#fbc100;
-          padding-bottom:18px;
+          padding-bottom:20px;
           border-bottom:2px solid #fbc100;
         }
       }
@@ -73,6 +75,54 @@ header{
         height:35px;
         background:yellow;
       }
+      .header-set{
+        position: absolute;
+        top:60px;
+        right:-95px;
+        z-index:10;
+        width:130px;
+        height:182px;
+        background:#333;
+        display:flex;
+        flex-direction:column;
+        a{
+          color:#fff;
+          width:100%;
+          height:43px;
+          line-height:43px;
+          text-align:center;
+          position: relative;
+          z-index:10;
+          i{
+            svg{
+              width:20px;
+              height:20px;
+              margin-bottom:-6px; 
+            }
+            .rzjh{
+              margin-left:-26px;
+            }
+          }
+          &:hover{
+            color:#fbc100;
+            i{
+              svg{
+                fill:#fbc100;
+              }
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 1410px){
+        .header-set{
+          left:75px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1250px){
+    .header{
+      width:950px;
     }
   }
 }
@@ -108,18 +158,26 @@ nav{
           width: 100px;
           height: 40px;
           margin-right: 1px;
-          .item2{
-            background: #fff;
-            width: 99px;
-            height: 40px;
-            // border: 1px solid rgba(0,0,0,0.001);
-            border: 1px solid #fff;
-            margin-left: -1px;
-            display: none;
-            &:hover{
-              background:red;
+          ul{
+            margin-top:-1px;
+            margin-left:-1px;
+            overflow-y:auto;
+            width:100%;
+            height:80px;
+            .item2{
+              background: #fff;
+              width: 99px;
+              height: 40px;
+              // border: 1px solid rgba(0,0,0,0.001);
+              border: 1px solid #fff;
+              margin-left: -1px;
+              display: none;
+              &:hover{
+                background:red;
+              }
             }
           }
+          
           &:hover .item2{
             display: block;
           }
@@ -159,7 +217,14 @@ nav{
       border:0 solid red;
     }
   }
-  
+  @media screen and (max-width: 1250px){
+    .nav{
+      width:950px;
+      .nav-add{
+        left:128px;
+      }
+    }
+  }
 }
 section{
   margin:0 auto;
@@ -286,6 +351,28 @@ section{
     }
   }
 }
+@media screen and (max-width: 1250px){
+  section{
+    transform:scale(0.8);
+    margin-left:-0px;
+    margin-top:-76px;
+  }
+}
+@media screen and (max-width: 1150px){
+  section{
+    margin-left:-66px;
+  }
+}
+@media screen and (max-width: 1050px){
+  section{
+    margin-left:-96px;
+  }
+}
+@media screen and (max-width: 1024px){
+  section{
+    margin-left:-106px;
+  }
+}
 footer{
   height:278px;
   width:100%;
@@ -306,13 +393,11 @@ footer{
       align-items:center;
       flex-direction:column;
       i{
+        display:block;
         margin-top:54px;
         margin-bottom:20px;
-        svg{
-          width:42px;
-          height:35px;
-          fill:#fff;
-        }
+        width:42px;
+        height:35px;
       }
       ul{
         li{
@@ -333,6 +418,14 @@ footer{
         color:#fff;
         margin-left:20px;
       }
+    }
+  }
+}
+@media screen and (max-width: 1250px){
+  footer{
+    margin-top:-136px;
+    .foot{
+      width:950px;
     }
   }
 }
